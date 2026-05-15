@@ -1,0 +1,47 @@
+<div class="container mt-4">
+
+  <h2>Mini-Gerenciador Sustentável</h2>
+
+  <form (ngSubmit)="salvar()" class="mb-4">
+
+    <input class="form-control mb-2"
+           placeholder="Nome"
+           [(ngModel)]="novoItem.nome"
+           name="nome">
+
+    <input class="form-control mb-2"
+           type="number"
+           placeholder="Quantidade"
+           [(ngModel)]="novoItem.quantidade"
+           name="quantidade">
+
+    <input class="form-control mb-2"
+           placeholder="Categoria"
+           [(ngModel)]="novoItem.categoria"
+           name="categoria">
+
+    <button class="btn btn-success w-100">
+      Salvar Item
+    </button>
+
+  </form>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Quantidade</th>
+        <th>Categoria</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let i of itens">
+        <td>{{ i.nome }}</td>
+        <td>{{ i.quantidade }}</td>
+        <td>{{ i.categoria }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
